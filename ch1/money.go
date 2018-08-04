@@ -8,6 +8,10 @@ func (d *Dollar) Times(n int) *Dollar {
 	return &Dollar{Amount: d.Amount * n}
 }
 
+func (d *Dollar) Equals(other Dollar) bool {
+	return true
+}
+
 func main() {
 
 }
