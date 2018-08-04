@@ -5,7 +5,7 @@ type Dollar struct {
 }
 
 func (d *Dollar) Times(n int) {
-	d.Amount = 10
+	d.Amount = d.Amount * n
 }
 
 func main() {
