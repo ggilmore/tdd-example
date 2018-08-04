@@ -20,4 +20,8 @@ func Test_Equality(t *testing.T) {
 	if !(&Dollar{Amount: 5}).Equals(Dollar{Amount: 5}) {
 		t.Error("$5 != %5")
 	}
+
+	if (&Dollar{Amount: 5}).Equals(Dollar{Amount: 6}) {
+		t.Error("$5 == $6")
+	}
 }
