@@ -9,7 +9,7 @@ func (d *Dollar) Times(n int) *Dollar {
 }
 
 func (d *Dollar) Equals(other Dollar) bool {
-	return true
+	return d.Amount == other.Amount
 }
 
 func main() {
