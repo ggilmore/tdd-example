@@ -7,3 +7,4 @@
 - [] hashCode
 - [] equal null?
 - [] equal object ()?
+- [] equals pointer seems bad
