@@ -17,11 +17,15 @@ func Test_Multiplication(t *testing.T) {
 }
 
 func Test_Equality(t *testing.T) {
-	if !(&Dollar{Amount: 5}).Equals(Dollar{Amount: 5}) {
+
+	five := Dollar{Amount: 5}
+	otherFive := Dollar{Amount: 5}
+	if !five.Equals(otherFive) {
 		t.Error("$5 != %5")
 	}
 
-	if (&Dollar{Amount: 5}).Equals(Dollar{Amount: 6}) {
+	six := Dollar{Amount: 6}
+	if five.Equals(six) {
 		t.Error("$5 == $6")
 	}
 }
