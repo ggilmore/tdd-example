@@ -3,59 +3,60 @@ package main
 import "testing"
 
 func Test_Multiplication(t *testing.T) {
-	five := NewDollar(5)
+	five := Dollar(5)
 	product := five.Times(2)
-	if !Equals(product, NewDollar(10)) {
+	if !product.Equals(Dollar(10)) {
 		t.Errorf("expected $5*2 = $10, got: %s", product)
 	}
 
 	product = five.Times(3)
-	if !Equals(product, NewDollar(15)) {
+	if !product.Equals(Dollar(15)) {
 		t.Errorf("expected $5*3 = $15, got: %s", product)
 	}
 }
 
 func Test_Equality(t *testing.T) {
 
-	fiveDollars := NewDollar(5)
-	otherFiveDollars := NewDollar(5)
-	if !Equals(fiveDollars, otherFiveDollars) {
+	fiveDollars := Dollar(5)
+	otherFiveDollars := Dollar(5)
+	if !fiveDollars.Equals(otherFiveDollars) {
 		t.Error("$5 != %5")
 	}
 
-	sixDollars := NewDollar(6)
-	if Equals(fiveDollars, sixDollars) {
+	sixDollars := Dollar(6)
+	if fiveDollars.Equals(sixDollars) {
 		t.Error("$5 == $6")
 	}
 
-	fiveFrancs := NewFranc(5)
-	otherFiveFrancs := NewFranc(5)
-	if !Equals(fiveFrancs, otherFiveFrancs) {
-		t.Error("$5 != %5")
-	}
-
-	sixFrancs := NewFranc(6)
-	if Equals(fiveFrancs, sixFrancs) {
-		t.Error("$5 == $6")
-	}
-
-	if Equals(fiveDollars, fiveFrancs) {
+	fiveFrancs := Franc(5)
+	if fiveDollars.Equals(fiveFrancs) {
 		t.Error("$5 == ₣5")
 	}
 
 }
 
 func Test_FrancMultiplication(t *testing.T) {
-	five := NewFranc(5)
+	five := Franc(5)
 
 	product := five.Times(2)
 
-	if !Equals(product, NewFranc(10)) {
+	if !product.Equals(Franc(10)) {
 		t.Errorf("expected ₣:5*2 = ₣:10, got: %s", product)
 	}
 
 	product = five.Times(3)
-	if !Equals(product, NewFranc(15)) {
+	if !product.Equals(Franc(15)) {
 		t.Errorf("expected ₣:5*3 =₣:15, got: %s", product)
+	}
+}
+
+func Test_Currency(t *testing.T) {
+
+	if "USD" != Dollar(1).Currency {
+		t.Errorf("want: USD, got: %s", Dollar(1).Currency)
+	}
+
+	if "CHF" != Franc(1).Currency {
+		t.Errorf("want: CHF, got: %s", Franc(1).Currency)
 	}
 }
