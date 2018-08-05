@@ -30,3 +30,18 @@ func Test_Equality(t *testing.T) {
 		t.Error("$5 == $6")
 	}
 }
+
+func Test_FrancMultiplication(t *testing.T) {
+	five := NewFranc(5)
+
+	product := five.Times(2)
+
+	if !product.Equals(*NewFranc(10)) {
+		t.Errorf("expected $5*2 = $10, got: %s", product)
+	}
+
+	product = five.Times(3)
+	if !product.Equals(*NewFranc(15)) {
+		t.Errorf("expected $5*3 = $15, got: %s", product)
+	}
+}
