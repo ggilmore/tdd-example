@@ -3,23 +3,23 @@ package main
 import "fmt"
 
 type Dollar struct {
-	Amount int
+	amount int
 }
 
 func NewDollar(amount int) *Dollar {
-	return &Dollar{Amount: amount}
+	return &Dollar{amount: amount}
 }
 
 func (d *Dollar) String() string {
-	return fmt.Sprintf("$%d", d.Amount)
+	return fmt.Sprintf("$%d", d.amount)
 }
 
 func (d *Dollar) Times(n int) *Dollar {
-	return &Dollar{Amount: d.Amount * n}
+	return &Dollar{amount: d.amount * n}
 }
 
 func (d *Dollar) Equals(other Dollar) bool {
-	return d.Amount == other.Amount
+	return d.amount == other.amount
 }
 
 func main() {
