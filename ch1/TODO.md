@@ -5,3 +5,5 @@
 - [] Money rounding?
 - [X] equals?
 - [] hashCode
+- [] equal null?
+- [] equal object ()?
