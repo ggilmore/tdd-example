@@ -30,7 +30,7 @@ func (d *Dollar) String() string {
 	return fmt.Sprintf("$%d", d.value)
 }
 
-func (d *Dollar) Times(n int) *Dollar {
+func (d *Dollar) Times(n int) Money {
 	return &Dollar{value: d.value * n}
 }
 
@@ -50,7 +50,7 @@ func (f *Franc) String() string {
 	return fmt.Sprintf("₣%d", f.value)
 }
 
-func (f *Franc) Times(n int) *Franc {
+func (f *Franc) Times(n int) Money {
 	return &Franc{value: f.value * n}
 }
 
