@@ -3,7 +3,7 @@ package main
 import "testing"
 
 func Test_Multiplication(t *testing.T) {
-	five := Dollar{Amount: 5}
+	five := NewDollar(5)
 	product := five.Times(2)
 
 	if product.Amount != 10 {
@@ -18,13 +18,13 @@ func Test_Multiplication(t *testing.T) {
 
 func Test_Equality(t *testing.T) {
 
-	five := Dollar{Amount: 5}
+	five := NewDollar(5)
 	otherFive := Dollar{Amount: 5}
 	if !five.Equals(otherFive) {
 		t.Error("$5 != %5")
 	}
 
-	six := Dollar{Amount: 6}
+	six := NewDollar(6)
 	if five.Equals(six) {
 		t.Error("$5 == $6")
 	}
