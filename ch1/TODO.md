@@ -8,3 +8,7 @@
 - [] equal null?
 - [] equal object ()?
 - [] equals pointer seems bad
+- [] franc deduplication
+- [] shared equals 
+- [] shared times
+- [X] 5 CHF * 2 - 10 CHF
