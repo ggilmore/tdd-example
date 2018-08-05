@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 type Money interface {
 	amount() int
@@ -8,7 +11,7 @@ type Money interface {
 }
 
 func Equals(a, b Money) bool {
-	return a.amount() == b.amount()
+	return reflect.TypeOf(a).Elem().Name() == reflect.TypeOf(b).Elem().Name() && a.amount() == b.amount()
 }
 
 type Dollar struct {
@@ -44,7 +47,7 @@ func (f *Franc) amount() int {
 }
 
 func (f *Franc) String() string {
-	return fmt.Sprintf("₣:%d", f.value)
+	return fmt.Sprintf("₣%d", f.value)
 }
 
 func (f *Franc) Times(n int) *Franc {

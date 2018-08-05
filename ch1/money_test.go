@@ -39,6 +39,10 @@ func Test_Equality(t *testing.T) {
 		t.Error("$5 == $6")
 	}
 
+	if Equals(fiveDollars, fiveFrancs) {
+		t.Error("$5 == ₣5")
+	}
+
 }
 
 func Test_FrancMultiplication(t *testing.T) {

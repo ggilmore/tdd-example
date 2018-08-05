@@ -9,6 +9,7 @@
 - [] equal object ()?
 - [] equals pointer seems bad
 - [] franc deduplication
-- [] shared equals 
+- [X] shared equals 
 - [] shared times
 - [X] 5 CHF * 2 - 10 CHF
+- [X] Compare Francs with Dollars
